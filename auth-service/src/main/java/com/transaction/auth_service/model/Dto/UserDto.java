@@ -1,4 +1,4 @@
-package com.transaction.auth_service.model;
+package com.transaction.auth_service.model.Dto;
 
 import lombok.Getter;
 import lombok.Setter;

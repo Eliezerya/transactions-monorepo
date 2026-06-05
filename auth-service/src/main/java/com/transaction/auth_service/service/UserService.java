@@ -1,9 +1,11 @@
 package com.transaction.auth_service.service;
 
-import com.transaction.auth_service.model.User;
-import com.transaction.auth_service.model.UserDto;
+import com.transaction.auth_service.model.Entity.User;
+import com.transaction.auth_service.model.Dto.UserDto;
 import com.transaction.auth_service.repository.UserRepository;
 import io.jsonwebtoken.Claims;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ import java.util.Optional;
 @Service
 public class UserService {
 
+    private static final Logger log = LoggerFactory.getLogger(UserService.class);
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
@@ -54,8 +57,11 @@ public class UserService {
     }
 
     public Map<String, Object> validateToken(String token) {
+        log.info("Attempting to validate JWT token");
         Claims claims = jwtService.extractClaims(token);
+
         if (jwtService.isTokenExpired(claims)) {
+            log.warn("Token validation failed: Token is expired");
             throw new IllegalArgumentException("JWT Token has expired or is invalid");
         }
 
@@ -71,6 +77,8 @@ public class UserService {
         result.put("username", claims.getSubject());
         result.put("email", claims.get("email", String.class));
         result.put("role", claims.get("role", String.class));
+
+        log.info("Token validated successfully for user: {}", claims.getSubject());
         return result;
     }
 }

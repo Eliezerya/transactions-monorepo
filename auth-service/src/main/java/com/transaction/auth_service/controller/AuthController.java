@@ -1,8 +1,10 @@
 package com.transaction.auth_service.controller;
 
-import com.transaction.auth_service.model.User;
-import com.transaction.auth_service.model.UserDto;
+import com.transaction.auth_service.model.Entity.User;
+import com.transaction.auth_service.model.Dto.UserDto;
 import com.transaction.auth_service.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import java.util.Map;
 @RequestMapping("/api/auth")
 public class AuthController {
 
+    private static final Logger log = LoggerFactory.getLogger(AuthController.class);
     private final UserService userService;
 
     public AuthController(UserService userService) {
@@ -22,6 +25,8 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody UserDto registrationRequest) {
+        log.info("Received registration request for user: {}", registrationRequest.getUsername());
+
         if (registrationRequest.getUsername() == null || registrationRequest.getUsername().trim().isEmpty() ||
             registrationRequest.getPassword() == null || registrationRequest.getPassword().trim().isEmpty()) {
             Map<String, Object> errorResponse = new HashMap<>();
@@ -54,6 +59,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserDto loginRequest) {
+        log.info("Received login request for user: {}", loginRequest.getUsername());
         if (loginRequest.getUsername() == null || loginRequest.getUsername().trim().isEmpty() ||
             loginRequest.getPassword() == null || loginRequest.getPassword().trim().isEmpty()) {
             Map<String, Object> errorResponse = new HashMap<>();
@@ -79,6 +85,7 @@ public class AuthController {
 
     @GetMapping("/validate")
     public ResponseEntity<?> validate(@RequestHeader(value = "Authorization", required = false) String authHeader) {
+        log.info("Received token validation request");
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             Map<String, Object> response = new HashMap<>();
             response.put("valid", false);

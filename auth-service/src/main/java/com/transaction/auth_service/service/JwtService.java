@@ -1,6 +1,6 @@
 package com.transaction.auth_service.service;
 
-import com.transaction.auth_service.model.User;
+import com.transaction.auth_service.model.Entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;

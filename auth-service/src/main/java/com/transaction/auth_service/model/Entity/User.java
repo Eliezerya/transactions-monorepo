@@ -1,4 +1,4 @@
-package com.transaction.auth_service.model;
+package com.transaction.auth_service.model.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
