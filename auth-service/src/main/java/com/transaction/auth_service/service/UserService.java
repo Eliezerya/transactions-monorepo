@@ -66,7 +66,7 @@ public class UserService {
         }
 
         Object userIdVal = claims.get("userId");
-        Long userId = null;
+        Long userId = 0L;
         if (userIdVal instanceof Number) {
             userId = ((Number) userIdVal).longValue();
         }

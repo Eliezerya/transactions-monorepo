@@ -15,14 +15,12 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
-
     private static final Logger log = LoggerFactory.getLogger(AuthController.class);
     private final UserService userService;
 
     public AuthController(UserService userService) {
         this.userService = userService;
     }
-
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody UserDto registrationRequest) {
         log.info("Received registration request for user: {}", registrationRequest.getUsername());
