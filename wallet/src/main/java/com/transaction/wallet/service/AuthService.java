@@ -25,7 +25,7 @@ public class AuthService {
         try {
             return authClient.validateToken(token);
         } catch (Exception e) {
-            throw new IllegalArgumentException("Token validation failed: " + e.getMessage());
+            return null;
         }
     }
 }

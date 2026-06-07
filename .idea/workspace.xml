@@ -5,25 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32f12b2d-cb70-4b56-b576-a26119d8a409" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/controller/WalletController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/dto/WalletDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/entity/Wallet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/service/WalletService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/transactions.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/transaction/auth_service/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/transaction/auth_service/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/transaction/auth_service/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/transaction/auth_service/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/transaction/auth_service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/transaction/auth_service/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wallet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docs/Transaction Monorepo.postman_collection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Docs/transaction-flow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/controller/TransactionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/dto/MonthlyReportDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/dto/TranscationDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/dto/TransferResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/entity/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/repository/TransactionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/service/NotificationClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/service/TransactionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/service/TransactionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API_DOCUMENTATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/API_DOCUMENTATION.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPECIFICATION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/controller/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/controller/WalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/dto/WalletDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/dto/WalletDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/entity/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/model/entity/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/repository/WalletRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/repository/WalletRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/service/WalletServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wallet/src/main/java/com/transaction/wallet/service/WalletServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +41,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="e6c5353d-4bac-42bd-b223-9f52df24c15c" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
