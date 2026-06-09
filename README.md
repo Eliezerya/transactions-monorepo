@@ -118,16 +118,18 @@ Client ──GET /api/transaction/monthly?month=6&year=2026──► wallet-serv
 
 ## 🛠️ Tech Stack
 
-| Layer            | Technology                         |
-|------------------|------------------------------------|
-| Language         | Java 26                            |
-| Framework        | Spring Boot 4                      |
-| Database         | PostgreSQL 16 (per-service)        |
-| Containerization | Docker + Docker Compose            |
-| Observability    | OpenTelemetry + Grafana LGTM       |
-| Security         | JWT (HS384)                        |
-| Concurrency      | Pessimistic Locking (SELECT FOR UPDATE) |
-| Data Processing  | Java Stream API                    |
+| Layer              | Technology                              |
+|--------------------|-----------------------------------------|
+| Language           | Java 26                                 |
+| Framework          | Spring Boot 4.0.6                       |
+| Service Comm.      | Spring Cloud OpenFeign 2025.1.1         |
+| Database           | PostgreSQL 16 (per-service)             |
+| Containerization   | Docker + Docker Compose                 |
+| Observability      | OpenTelemetry + Grafana LGTM            |
+| Security           | JWT (HS384) via jjwt 0.12.5             |
+| Concurrency        | Pessimistic Locking (SELECT FOR UPDATE) |
+| Data Processing    | Java Stream API                         |
+| Boilerplate        | Lombok                                  |
 
 ---
 
@@ -327,20 +329,19 @@ transactions-monorepo/
 │   ├── src/
 │   ├── Dockerfile
 │   └── pom.xml
-├── wallet/                 # Wallet management & transfer microservice
+├── wallet-service/         # Wallet management & transfer microservice
 │   ├── src/
 │   ├── init.sql            # Creates notification_db on wallet-db container
 │   ├── Dockerfile
 │   └── pom.xml
-├── notification/           # Notification microservice (email/SMS simulation)
+├── notification-service/   # Notification microservice (email/SMS simulation)
 │   ├── src/
 │   ├── Dockerfile
 │   └── pom.xml
 ├── Docs/
 │   ├── API_DOCUMENTATION.md              # Full API contract (this system)
 │   ├── Transaction Monorepo.postman_collection.json  # Postman collection
-│   ├── transaction-flow.png              # Flow diagram
-│   └── README.md
+│   └── transaction-flow.png              # Flow diagram
 └── compose.yaml            # Docker Compose — orchestrates all services
 ```
 

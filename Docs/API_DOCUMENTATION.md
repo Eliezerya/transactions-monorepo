@@ -2,6 +2,8 @@
 
 This document describes the REST API contract for the three microservices in the system. All endpoints, request/response formats, and HTTP status codes reflect the current implementation.
 
+> **Stack:** Java 26 · Spring Boot 4.0.6 · Spring Cloud OpenFeign 2025.1.1 · PostgreSQL 16 · jjwt 0.12.5
+
 ---
 
 ## 🔑 Authentication Service (`auth-service`)
@@ -113,11 +115,11 @@ Verify a JWT token and extract user details. Called internally by other microser
 
 ---
 
-## 💼 Wallet Service (`wallet`)
+## 💼 Wallet Service (`wallet-service`)
 
 - **Default Port:** `8081`
 - **Base Path:** `/api`
-- **Security:** All endpoints require the `Authorization: Bearer <token>` header. The service validates it by calling `auth-service`'s validate endpoint.
+- **Security:** All endpoints require the `Authorization: Bearer <token>` header. The service validates it by calling `auth-service`'s validate endpoint via **Spring Cloud OpenFeign**.
 
 ### 1. Create Wallet
 
