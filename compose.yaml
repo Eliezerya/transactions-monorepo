@@ -62,7 +62,7 @@ services:
 
   wallet-service:
     build:
-      context: ./wallet
+      context: wallet-service
       dockerfile: Dockerfile
     container_name: wallet-service
     ports:
@@ -87,7 +87,7 @@ services:
 
   notification-service:
     build:
-      context: ./notification
+      context: notification-service
       dockerfile: Dockerfile
     container_name: notification-service
     ports:

@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.transactions</groupId>
+    <artifactId>transactions-monorepo</artifactId>
+    <version>1.0.0</version>
+
+    <!-- penting -->
+    <packaging>pom</packaging>
+
+    <!-- daftar module -->
+    <modules>
+        <module>auth-service</module>
+        <module>wallet-service</module>
+        <module>notification-service</module>
+    </modules>
+
+    <!-- version global -->
+    <properties>
+        <java.version>26</java.version>
+        <spring.boot.version>4.0.6docdock</spring.boot.version>
+    </properties>
+
+    <!-- dependency management -->
+    <dependencyManagement>
+        <dependencies>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
